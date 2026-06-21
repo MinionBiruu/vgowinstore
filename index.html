@@ -3,510 +3,348 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>VGOWIN — Top Up Game Online, Diamond Masuk Dalam Detik</title>
+<title>VGOWIN — Perabotan Rumah Tangga</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --bg:#0c0a1c;
-    --bg-2:#13102b;
-    --surface:#1a1638;
-    --surface-2:#221c47;
-    --line:#2e2856;
-    --cyan:#37e6ff;
-    --magenta:#ff2f9c;
-    --gold:#ffd24a;
-    --text:#f1eeff;
-    --muted:#9c95c8;
-    --muted-2:#6f689a;
-    --grad:linear-gradient(100deg,var(--cyan),var(--magenta));
+    --bg:#FFFFFF;
+    --soft:#F7F4EF;
+    --cream:#F1EBE1;
+    --ink:#26221E;
+    --muted:#8B847A;
+    --line:#EAE5DD;
+    --line-strong:#DED7CB;
+    --accent:#A06B4C;
+    --accent-deep:#7E5238;
+    --sage:#7C8A6C;
     --radius:16px;
   }
-
   *{margin:0;padding:0;box-sizing:border-box}
   html{scroll-behavior:smooth}
   body{
-    background:var(--bg);
-    color:var(--text);
-    font-family:'Plus Jakarta Sans',system-ui,sans-serif;
-    line-height:1.6;
-    overflow-x:hidden;
-    -webkit-font-smoothing:antialiased;
+    background:var(--bg);color:var(--ink);
+    font-family:"Hanken Grotesk",system-ui,sans-serif;
+    line-height:1.6;-webkit-font-smoothing:antialiased;
   }
-  ::selection{background:var(--magenta);color:#fff}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+  .serif{font-family:"Fraunces",serif}
 
-  .wrap{max-width:1140px;margin:0 auto;padding:0 24px}
-  .mono{font-family:'Chakra Petch',monospace}
+  /* NAV */
+  header{position:sticky;top:0;z-index:40;background:rgba(255,255,255,.85);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:72px}
+  .logo{font-family:"Fraunces",serif;font-weight:600;font-size:24px;letter-spacing:.5px;display:flex;align-items:center;gap:10px}
+  .logo .mark{width:24px;height:24px;border-radius:7px;background:var(--accent);display:inline-block;position:relative}
+  .logo .mark::after{content:"";position:absolute;inset:6px;border-radius:3px;background:var(--bg)}
+  .navlinks{display:flex;gap:32px;font-size:15px;font-weight:500;color:var(--muted)}
+  .navlinks a{transition:color .2s}
+  .navlinks a:hover{color:var(--ink)}
+  .btn{display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:15px;font-family:inherit;padding:12px 24px;border-radius:100px;cursor:pointer;border:1px solid transparent;transition:all .2s}
+  .btn-primary{background:var(--accent);color:#fff}
+  .btn-primary:hover{background:var(--accent-deep)}
+  .btn-ghost{background:transparent;color:var(--ink);border-color:var(--line-strong)}
+  .btn-ghost:hover{background:var(--soft)}
+  @media(max-width:780px){.navlinks{display:none}}
 
-  /* ---------- NAV ---------- */
-  nav{
-    position:sticky;top:0;z-index:50;
-    backdrop-filter:blur(14px);
-    background:rgba(12,10,28,.72);
-    border-bottom:1px solid var(--line);
-  }
-  .nav-in{display:flex;align-items:center;justify-content:space-between;height:68px}
-  .logo{
-    font-family:'Chakra Petch',monospace;font-weight:700;font-size:22px;
-    letter-spacing:1px;display:flex;align-items:center;gap:10px;
-  }
-  .logo .bolt{
-    width:30px;height:30px;border-radius:9px;background:var(--grad);
-    display:grid;place-items:center;color:#0c0a1c;font-size:17px;
-    box-shadow:0 0 18px rgba(55,230,255,.5);
-  }
-  .logo .g{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
-  .nav-links{display:flex;gap:30px;align-items:center}
-  .nav-links a{color:var(--muted);text-decoration:none;font-size:15px;font-weight:500;transition:color .2s}
-  .nav-links a:hover{color:var(--text)}
-  .btn{
-    font-family:'Chakra Petch',monospace;font-weight:600;
-    border:none;cursor:pointer;text-decoration:none;
-    border-radius:11px;transition:transform .15s, box-shadow .25s, background .25s;
-    display:inline-flex;align-items:center;gap:8px;letter-spacing:.3px;
-  }
-  .btn-primary{
-    background:var(--grad);color:#0c0a1c;padding:12px 22px;font-size:15px;
-    box-shadow:0 0 0 rgba(255,47,156,0);
-  }
-  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 30px -8px rgba(255,47,156,.55)}
-  .btn-ghost{
-    background:var(--surface);color:var(--text);padding:12px 22px;font-size:15px;
-    border:1px solid var(--line);
-  }
-  .btn-ghost:hover{border-color:var(--cyan);color:var(--cyan)}
-  .nav-cta{display:flex;gap:12px;align-items:center}
-  .burger{display:none;background:none;border:none;color:var(--text);cursor:pointer}
+  /* HERO */
+  .hero{padding:72px 0 86px}
+  .hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+  .eyebrow{display:inline-block;font-size:13px;letter-spacing:1.5px;text-transform:uppercase;color:var(--accent);font-weight:600;margin-bottom:20px}
+  h1.hero-title{font-family:"Fraunces",serif;font-weight:500;font-size:clamp(38px,5.5vw,60px);line-height:1.05;letter-spacing:-.5px;margin-bottom:22px}
+  h1.hero-title em{font-style:italic;color:var(--accent)}
+  .hero-sub{font-size:18px;color:var(--muted);max-width:420px;margin-bottom:32px}
+  .hero-cta{display:flex;gap:14px;flex-wrap:wrap}
+  .hero-note{margin-top:30px;display:flex;gap:24px;font-size:14px;color:var(--muted)}
+  .hero-note span{display:flex;align-items:center;gap:8px}
+  .hero-note .ck{color:var(--sage);font-weight:700}
 
-  /* ---------- HERO ---------- */
-  .hero{position:relative;padding:70px 0 90px;overflow:hidden}
-  .hero-bg{position:absolute;inset:0;z-index:0;pointer-events:none}
-  .hero-bg::before{
-    content:"";position:absolute;top:-180px;left:-120px;width:520px;height:520px;
-    background:radial-gradient(circle,rgba(55,230,255,.22),transparent 65%);
+  /* HERO ILLUSTRATION (signature) */
+  .scene{position:relative;display:flex;justify-content:center;align-items:center}
+  .scene-bg{position:absolute;width:380px;height:380px;border-radius:50%;background:var(--cream);z-index:0}
+  .scene svg{position:relative;z-index:1;width:100%;max-width:430px;height:auto}
+  @media(max-width:820px){
+    .hero-grid{grid-template-columns:1fr;gap:48px}
+    .scene{order:-1}
+    .scene-bg{width:300px;height:300px}
   }
-  .hero-bg::after{
-    content:"";position:absolute;bottom:-160px;right:-100px;width:520px;height:520px;
-    background:radial-gradient(circle,rgba(255,47,156,.22),transparent 65%);
-  }
-  .grid-lines{
-    position:absolute;inset:0;
-    background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);
-    background-size:52px 52px;
-    opacity:.25;
-    mask-image:radial-gradient(ellipse 75% 60% at 50% 30%,#000 30%,transparent 75%);
-    -webkit-mask-image:radial-gradient(ellipse 75% 60% at 50% 30%,#000 30%,transparent 75%);
-  }
-  .hero-in{position:relative;z-index:1;display:grid;grid-template-columns:1fr 420px;gap:54px;align-items:center}
-  .eyebrow{
-    display:inline-flex;align-items:center;gap:9px;
-    font-family:'Chakra Petch',monospace;font-size:13px;letter-spacing:1.5px;
-    text-transform:uppercase;color:var(--cyan);
-    background:rgba(55,230,255,.08);border:1px solid rgba(55,230,255,.25);
-    padding:7px 14px;border-radius:100px;margin-bottom:24px;
-  }
-  .dot{width:7px;height:7px;border-radius:50%;background:var(--cyan);box-shadow:0 0 9px var(--cyan);animation:blink 1.6s infinite}
-  @keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
-  h1{
-    font-family:'Chakra Petch',monospace;font-weight:700;
-    font-size:clamp(40px,6vw,62px);line-height:1.02;letter-spacing:-.5px;margin-bottom:20px;
-  }
-  h1 .hl{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
-  .lead{font-size:18px;color:var(--muted);max-width:480px;margin-bottom:30px}
-  .hero-cta{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:34px}
-  .trust-row{display:flex;gap:28px;flex-wrap:wrap}
-  .trust-row .ti{display:flex;flex-direction:column}
-  .trust-row .num{font-family:'Chakra Petch',monospace;font-weight:700;font-size:24px;color:var(--text)}
-  .trust-row .num .g{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
-  .trust-row .lbl{font-size:13px;color:var(--muted-2)}
 
-  /* ---------- TOP UP SIMULATOR (signature) ---------- */
-  .sim{
-    background:linear-gradient(180deg,var(--surface),var(--bg-2));
-    border:1px solid var(--line);border-radius:22px;padding:24px;
-    box-shadow:0 30px 70px -30px rgba(0,0,0,.8), 0 0 0 1px rgba(55,230,255,.04);
-    position:relative;
-  }
-  .sim::before{
-    content:"";position:absolute;inset:-1px;border-radius:22px;padding:1px;
-    background:linear-gradient(140deg,rgba(55,230,255,.4),transparent 40%,transparent 60%,rgba(255,47,156,.4));
-    -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
-    -webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none;
-  }
-  .sim h3{font-family:'Chakra Petch',monospace;font-size:15px;letter-spacing:.5px;margin-bottom:4px;display:flex;align-items:center;gap:8px}
-  .sim .sub{font-size:13px;color:var(--muted-2);margin-bottom:18px}
-  .field-label{font-size:12px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.6px;margin-bottom:9px;display:block}
-  .game-pick{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:18px}
-  .game-chip{
-    background:var(--surface-2);border:1px solid var(--line);border-radius:12px;
-    padding:11px 6px;cursor:pointer;text-align:center;transition:all .18s;
-  }
-  .game-chip .ic{font-size:22px;display:block;margin-bottom:5px}
-  .game-chip .nm{font-size:11px;font-weight:600;color:var(--muted);line-height:1.2}
-  .game-chip:hover{border-color:var(--cyan)}
-  .game-chip.on{border-color:transparent;background:rgba(55,230,255,.12);box-shadow:0 0 0 1.5px var(--cyan) inset}
-  .game-chip.on .nm{color:var(--text)}
-  .denoms{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-bottom:18px}
-  .denom{
-    background:var(--surface-2);border:1px solid var(--line);border-radius:11px;
-    padding:11px 13px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;transition:all .15s;
-  }
-  .denom .amt{font-size:13px;font-weight:600}
-  .denom .pr{font-family:'Chakra Petch',monospace;font-size:13px;color:var(--gold)}
-  .denom:hover{border-color:var(--magenta)}
-  .denom.on{border-color:transparent;box-shadow:0 0 0 1.5px var(--magenta) inset;background:rgba(255,47,156,.1)}
-  .sim-total{
-    display:flex;justify-content:space-between;align-items:center;
-    padding:15px 4px 18px;border-top:1px dashed var(--line);margin-top:4px;
-  }
-  .sim-total .tl{font-size:13px;color:var(--muted)}
-  .sim-total .tv{font-family:'Chakra Petch',monospace;font-weight:700;font-size:26px;color:var(--gold)}
-  .sim .btn-primary{width:100%;justify-content:center;padding:14px}
+  /* SECTIONS */
+  section.block{padding:84px 0}
+  .sec-head{text-align:center;max-width:560px;margin:0 auto 48px}
+  .sec-eyebrow{font-size:13px;letter-spacing:1.5px;text-transform:uppercase;color:var(--accent);font-weight:600;margin-bottom:12px}
+  h2.sec-title{font-family:"Fraunces",serif;font-weight:500;font-size:clamp(28px,4vw,40px);letter-spacing:-.5px;line-height:1.1}
+  h2.sec-title em{font-style:italic;color:var(--accent)}
 
-  /* ---------- SECTION HEADERS ---------- */
-  section{position:relative}
-  .sec-head{text-align:center;max-width:620px;margin:0 auto 50px}
-  .sec-eyebrow{font-family:'Chakra Petch',monospace;font-size:13px;letter-spacing:2px;text-transform:uppercase;color:var(--magenta);margin-bottom:14px}
-  h2{font-family:'Chakra Petch',monospace;font-weight:700;font-size:clamp(28px,4vw,40px);line-height:1.1;letter-spacing:-.5px;margin-bottom:14px}
-  .sec-head p{color:var(--muted);font-size:17px}
+  /* CATEGORIES */
+  .cats{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+  @media(max-width:760px){.cats{grid-template-columns:1fr 1fr}}
+  .cat{background:var(--soft);border:1px solid var(--line);border-radius:var(--radius);padding:26px 22px;text-align:center;transition:transform .2s,background .2s;cursor:pointer}
+  .cat:hover{transform:translateY(-4px);background:var(--cream)}
+  .cat-ico{width:54px;height:54px;margin:0 auto 16px;display:flex;align-items:center;justify-content:center}
+  .cat-ico svg{width:42px;height:42px;stroke:var(--accent);fill:none;stroke-width:1.6}
+  .cat h3{font-family:"Fraunces",serif;font-weight:500;font-size:19px;margin-bottom:4px}
+  .cat p{font-size:13px;color:var(--muted)}
 
-  /* ---------- GAMES GRID ---------- */
-  .games{padding:96px 0;border-top:1px solid var(--line)}
-  .game-cards{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
-  .gc{
-    background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
-    padding:24px 20px;transition:transform .2s,border-color .2s;position:relative;overflow:hidden;
-  }
-  .gc::after{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:var(--grad);transform:scaleX(0);transform-origin:left;transition:transform .3s}
-  .gc:hover{transform:translateY(-5px);border-color:var(--line)}
-  .gc:hover::after{transform:scaleX(1)}
-  .gc .emoji{font-size:36px;margin-bottom:16px}
-  .gc h4{font-family:'Chakra Petch',monospace;font-size:17px;margin-bottom:5px}
-  .gc .cur{font-size:13px;color:var(--cyan);margin-bottom:14px}
-  .gc .from{font-size:12px;color:var(--muted-2)}
-  .gc .from b{font-family:'Chakra Petch',monospace;color:var(--gold);font-size:15px}
+  /* PRODUCTS */
+  .prods{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  @media(max-width:860px){.prods{grid-template-columns:1fr 1fr}}
+  @media(max-width:540px){.prods{grid-template-columns:1fr}}
+  .prod{border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;transition:box-shadow .25s,transform .25s;background:var(--bg)}
+  .prod:hover{transform:translateY(-5px);box-shadow:0 18px 40px -22px rgba(60,40,20,.4)}
+  .prod-img{height:200px;background:var(--soft);display:flex;align-items:center;justify-content:center;border-bottom:1px solid var(--line)}
+  .prod-img svg{width:120px;height:120px;stroke:var(--accent);fill:none;stroke-width:1.4}
+  .prod-info{padding:20px 22px}
+  .prod-info .tag{font-size:12px;letter-spacing:.5px;text-transform:uppercase;color:var(--sage);font-weight:600;margin-bottom:6px}
+  .prod-info h3{font-family:"Fraunces",serif;font-weight:500;font-size:20px;margin-bottom:10px}
+  .prod-foot{display:flex;align-items:center;justify-content:space-between}
+  .price{font-weight:700;font-size:18px}
+  .add{font-size:14px;font-weight:600;color:var(--accent);display:flex;align-items:center;gap:6px;cursor:pointer}
+  .add:hover{color:var(--accent-deep)}
 
-  /* ---------- STEPS ---------- */
-  .steps{padding:96px 0;border-top:1px solid var(--line);background:var(--bg-2)}
-  .step-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;counter-reset:s}
-  .step{position:relative;padding:30px 26px;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius)}
-  .step .n{
-    font-family:'Chakra Petch',monospace;font-weight:700;font-size:15px;
-    width:42px;height:42px;border-radius:11px;background:rgba(55,230,255,.1);
-    border:1px solid rgba(55,230,255,.3);color:var(--cyan);
-    display:grid;place-items:center;margin-bottom:20px;
-  }
-  .step h4{font-family:'Chakra Petch',monospace;font-size:19px;margin-bottom:9px}
-  .step p{color:var(--muted);font-size:15px}
-  .step-arrow{position:absolute;top:50px;right:-19px;color:var(--muted-2);font-size:22px;z-index:2}
+  /* WHY (soft band) */
+  .why{background:var(--soft)}
+  .why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:28px}
+  @media(max-width:760px){.why-grid{grid-template-columns:1fr 1fr}}
+  .why-item{text-align:center}
+  .why-ico{width:48px;height:48px;margin:0 auto 14px;border-radius:50%;background:var(--bg);border:1px solid var(--line-strong);display:flex;align-items:center;justify-content:center}
+  .why-ico svg{width:24px;height:24px;stroke:var(--accent);fill:none;stroke-width:1.7}
+  .why-item h4{font-family:"Fraunces",serif;font-weight:500;font-size:18px;margin-bottom:5px}
+  .why-item p{font-size:14px;color:var(--muted)}
 
-  /* ---------- FEATURES ---------- */
-  .feat{padding:96px 0;border-top:1px solid var(--line)}
-  .feat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
-  .fc{padding:26px 22px;border:1px solid var(--line);border-radius:var(--radius);background:var(--surface)}
-  .fc .fi{width:46px;height:46px;border-radius:12px;display:grid;place-items:center;font-size:22px;margin-bottom:18px;background:var(--surface-2);border:1px solid var(--line)}
-  .fc h4{font-family:'Chakra Petch',monospace;font-size:17px;margin-bottom:8px}
-  .fc p{color:var(--muted);font-size:14px}
+  /* CTA BAND */
+  .ctaband{text-align:center;background:var(--ink);color:#fff;border-radius:24px;padding:64px 40px}
+  .ctaband h2{font-family:"Fraunces",serif;font-weight:500;font-size:clamp(28px,4vw,40px);margin-bottom:14px}
+  .ctaband p{color:#C9C2B7;max-width:440px;margin:0 auto 28px;font-size:17px}
+  .ctaband .btn-primary{background:#fff;color:var(--ink)}
+  .ctaband .btn-primary:hover{background:var(--cream)}
 
-  /* ---------- CTA BAND ---------- */
-  .cta{padding:90px 0}
-  .cta-box{
-    position:relative;overflow:hidden;
-    background:linear-gradient(120deg,var(--surface),var(--surface-2));
-    border:1px solid var(--line);border-radius:26px;padding:60px 40px;text-align:center;
-  }
-  .cta-box::before{content:"";position:absolute;top:-120px;left:50%;transform:translateX(-50%);width:600px;height:300px;background:radial-gradient(ellipse,rgba(255,47,156,.18),transparent 70%)}
-  .cta-box > *{position:relative;z-index:1}
-  .cta-box h2{margin-bottom:14px}
-  .cta-box p{color:var(--muted);font-size:18px;max-width:520px;margin:0 auto 28px}
-
-  /* ---------- FOOTER ---------- */
-  footer{border-top:1px solid var(--line);padding:48px 0 30px;background:var(--bg-2)}
-  .foot-top{display:flex;justify-content:space-between;gap:40px;flex-wrap:wrap;margin-bottom:36px}
-  .foot-brand{max-width:300px}
-  .foot-brand p{color:var(--muted);font-size:14px;margin-top:14px}
-  .foot-cols{display:flex;gap:60px;flex-wrap:wrap}
-  .foot-col h5{font-family:'Chakra Petch',monospace;font-size:13px;letter-spacing:1px;text-transform:uppercase;color:var(--muted-2);margin-bottom:16px}
-  .foot-col a{display:block;color:var(--muted);text-decoration:none;font-size:14px;margin-bottom:11px;transition:color .2s}
-  .foot-col a:hover{color:var(--cyan)}
-  .foot-bot{border-top:1px solid var(--line);padding-top:24px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;color:var(--muted-2);font-size:13px}
-  .pays{display:flex;gap:10px;flex-wrap:wrap}
-  .pay{font-family:'Chakra Petch',monospace;font-size:11px;padding:5px 11px;border:1px solid var(--line);border-radius:7px;color:var(--muted)}
-
-  /* ---------- RESPONSIVE ---------- */
-  @media(max-width:920px){
-    .hero-in{grid-template-columns:1fr;gap:40px}
-    .sim{max-width:440px}
-    .game-cards,.feat-grid{grid-template-columns:repeat(2,1fr)}
-    .step-grid{grid-template-columns:1fr}
-    .step-arrow{display:none}
-  }
-  @media(max-width:680px){
-    .nav-links{display:none}
-    .nav-cta .btn-ghost{display:none}
-    .game-cards,.feat-grid{grid-template-columns:1fr}
-    .trust-row{gap:20px}
-    .cta-box{padding:44px 24px}
-  }
-  @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+  /* FOOTER */
+  footer{padding:60px 0 32px;border-top:1px solid var(--line);margin-top:84px}
+  .foot-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:32px;margin-bottom:44px}
+  @media(max-width:760px){.foot-grid{grid-template-columns:1fr 1fr}}
+  .foot-about p{color:var(--muted);font-size:15px;max-width:280px;margin-top:14px}
+  .foot-col h5{font-family:"Fraunces",serif;font-weight:600;font-size:15px;margin-bottom:16px}
+  .foot-col a{display:block;color:var(--muted);font-size:15px;margin-bottom:10px;transition:color .2s}
+  .foot-col a:hover{color:var(--accent)}
+  .foot-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:24px;border-top:1px solid var(--line);font-size:14px;color:var(--muted);flex-wrap:wrap;gap:10px}
 </style>
 </head>
 <body>
 
-<nav>
-  <div class="wrap nav-in">
-    <div class="logo"><span class="bolt mono">⚡</span><span><span class="g">VGO</span>WIN</span></div>
-    <div class="nav-links">
-      <a href="#games">Game</a>
-      <a href="#cara">Cara Top Up</a>
+<header>
+  <div class="wrap nav">
+    <div class="logo"><span class="mark"></span>VGOWIN</div>
+    <nav class="navlinks">
+      <a href="#kategori">Kategori</a>
+      <a href="#produk">Produk</a>
       <a href="#kenapa">Kenapa Kami</a>
-      <a href="#cta">Bantuan</a>
-    </div>
-    <div class="nav-cta">
-      <a href="#" class="btn btn-ghost">Masuk</a>
-      <a href="#topup" class="btn btn-primary">Top Up Sekarang</a>
-    </div>
-  </div>
-</nav>
-
-<!-- HERO -->
-<header class="hero" id="topup">
-  <div class="hero-bg"><div class="grid-lines"></div></div>
-  <div class="wrap hero-in">
-    <div class="hero-copy">
-      <span class="eyebrow"><span class="dot"></span>Proses Otomatis 24 Jam</span>
-      <h1>Top up game,<br><span class="hl">menang lebih cepat.</span></h1>
-      <p class="lead">Isi diamond, UC, dan voucher game favoritmu dalam hitungan detik. Harga termurah, pembayaran lengkap, masuk otomatis ke akun — tanpa ribet, tanpa nunggu.</p>
-      <div class="hero-cta">
-        <a href="#games" class="btn btn-primary">Pilih Game ⚡</a>
-        <a href="#cara" class="btn btn-ghost">Lihat Caranya</a>
-      </div>
-      <div class="trust-row">
-        <div class="ti"><span class="num"><span class="g">1.2JT+</span></span><span class="lbl">Transaksi sukses</span></div>
-        <div class="ti"><span class="num">~10<span style="font-size:15px"> detik</span></span><span class="lbl">Rata-rata proses</span></div>
-        <div class="ti"><span class="num">4.9<span style="font-size:15px">/5</span></span><span class="lbl">Rating pengguna</span></div>
-      </div>
-    </div>
-
-    <!-- SIGNATURE: SIMULATOR -->
-    <div class="sim">
-      <h3 class="mono">⚡ Top Up Instan</h3>
-      <p class="sub">Pilih game & nominal, harga langsung muncul.</p>
-
-      <span class="field-label">1. Pilih game</span>
-      <div class="game-pick" id="gamePick"></div>
-
-      <span class="field-label">2. Pilih nominal</span>
-      <div class="denoms" id="denoms"></div>
-
-      <div class="sim-total">
-        <span class="tl">Total bayar</span>
-        <span class="tv mono" id="total">Rp 0</span>
-      </div>
-      <button class="btn btn-primary" onclick="checkout()">Top Up Sekarang →</button>
-    </div>
+      <a href="#kontak">Kontak</a>
+    </nav>
+    <a href="#produk" class="btn btn-primary">Belanja</a>
   </div>
 </header>
 
-<!-- GAMES -->
-<section class="games" id="games">
-  <div class="wrap">
-    <div class="sec-head">
-      <div class="sec-eyebrow">Katalog Lengkap</div>
-      <h2>Semua game favoritmu, satu tempat</h2>
-      <p>Ratusan judul game mobile & PC siap di-top up kapan saja. Berikut yang paling laris.</p>
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow">Perabotan Rumah Tangga</span>
+      <h1 class="hero-title">Lengkapi rumah dengan barang yang bikin <em>betah</em>.</h1>
+      <p class="hero-sub">Perabotan dan dekorasi pilihan untuk setiap sudut rumah — berkualitas, awet, dengan harga yang jujur.</p>
+      <div class="hero-cta">
+        <a href="#produk" class="btn btn-primary">Lihat Koleksi</a>
+        <a href="#kategori" class="btn btn-ghost">Jelajahi Kategori</a>
+      </div>
+      <div class="hero-note">
+        <span><span class="ck">✓</span> Gratis ongkir</span>
+        <span><span class="ck">✓</span> Garansi 1 tahun</span>
+        <span><span class="ck">✓</span> Bisa COD</span>
+      </div>
     </div>
-    <div class="game-cards" id="gameCards"></div>
+
+    <div class="scene">
+      <div class="scene-bg"></div>
+      <!-- cozy corner: armchair + lamp + plant -->
+      <svg viewBox="0 0 440 380" xmlns="http://www.w3.org/2000/svg">
+        <!-- floor line -->
+        <line x1="40" y1="330" x2="400" y2="330" stroke="#DED7CB" stroke-width="2"/>
+        <!-- floor lamp -->
+        <g stroke="#7E5238" stroke-width="3" fill="none" stroke-linecap="round">
+          <line x1="360" y1="330" x2="360" y2="150"/>
+          <line x1="345" y1="330" x2="375" y2="330"/>
+        </g>
+        <path d="M338 150 h44 l-10 28 h-24 z" fill="#A06B4C" stroke="#7E5238" stroke-width="2" stroke-linejoin="round"/>
+        <!-- plant -->
+        <path d="M72 330 v-26 h44 v26 z" fill="#F1EBE1" stroke="#A06B4C" stroke-width="2"/>
+        <g stroke="#7C8A6C" stroke-width="3" fill="#7C8A6C" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M94 304 C 78 270 80 240 70 224 C 88 240 96 268 96 290" />
+          <path d="M94 304 C 110 268 110 236 122 220 C 104 240 98 270 96 292" />
+          <path d="M94 300 C 92 270 94 250 94 232 C 96 256 98 280 96 300" />
+        </g>
+        <!-- armchair -->
+        <g stroke="#7E5238" stroke-width="2.5" stroke-linejoin="round">
+          <!-- back -->
+          <path d="M150 150 q4 -34 38 -34 h74 q34 0 38 34 l6 70 h-162 z" fill="#A06B4C"/>
+          <!-- seat cushion -->
+          <path d="M150 224 q0 -16 16 -16 h108 q16 0 16 16 v18 q0 14 -16 14 h-108 q-16 0 -16 -14 z" fill="#B98363"/>
+          <!-- left arm -->
+          <path d="M132 196 q-14 0 -14 18 v42 q0 12 14 12 h22 v-58 q0 -14 -14 -14 z" fill="#A06B4C"/>
+          <!-- right arm -->
+          <path d="M308 196 q14 0 14 18 v42 q0 12 -14 12 h-22 v-58 q0 -14 14 -14 z" fill="#A06B4C"/>
+          <!-- legs -->
+          <line x1="150" y1="268" x2="146" y2="300" stroke-linecap="round"/>
+          <line x1="290" y1="268" x2="294" y2="300" stroke-linecap="round"/>
+        </g>
+        <!-- cushion accent -->
+        <rect x="186" y="172" width="68" height="48" rx="10" fill="#F1EBE1" stroke="#7E5238" stroke-width="2"/>
+      </svg>
+    </div>
   </div>
 </section>
 
-<!-- STEPS -->
-<section class="steps" id="cara">
+<!-- CATEGORIES -->
+<section class="block" id="kategori">
   <div class="wrap">
     <div class="sec-head">
-      <div class="sec-eyebrow" style="color:var(--cyan)">Tiga Langkah</div>
-      <h2>Top up cuma butuh 30 detik</h2>
-      <p>Tanpa daftar ribet. Tanpa login akun game. Cukup ID, pilih, dan bayar.</p>
+      <div class="sec-eyebrow">Belanja per Ruang</div>
+      <h2 class="sec-title">Temukan untuk setiap <em>sudut rumah</em></h2>
     </div>
-    <div class="step-grid">
-      <div class="step">
-        <div class="n">01</div>
-        <h4>Masukkan ID</h4>
-        <p>Ketik User ID dan Server game kamu. Nama akun otomatis muncul untuk dicek sebelum bayar.</p>
-        <span class="step-arrow">→</span>
+    <div class="cats">
+      <div class="cat">
+        <div class="cat-ico"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11V8a2 2 0 012-2h12a2 2 0 012 2v3"/><path d="M3 11a2 2 0 012 2v3h14v-3a2 2 0 012-2"/><path d="M5 19v2M19 19v2"/><path d="M3 16h18"/></svg></div>
+        <h3>Ruang Tamu</h3><p>Sofa, kursi & meja</p>
       </div>
-      <div class="step">
-        <div class="n">02</div>
-        <h4>Pilih nominal & bayar</h4>
-        <p>Pilih jumlah diamond atau voucher, lalu bayar lewat e-wallet, QRIS, transfer bank, atau pulsa.</p>
-        <span class="step-arrow">→</span>
+      <div class="cat">
+        <div class="cat-ico"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M5 11h14l-1 9H6z"/><path d="M5 11a7 7 0 0114 0"/><path d="M12 4V2"/></svg></div>
+        <h3>Dapur & Makan</h3><p>Peralatan & wadah</p>
       </div>
-      <div class="step">
-        <div class="n">03</div>
-        <h4>Langsung masuk</h4>
-        <p>Sistem otomatis memproses pesananmu. Diamond masuk ke akun dalam hitungan detik. Selesai!</p>
+      <div class="cat">
+        <div class="cat-ico"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17v-5a2 2 0 012-2h14a2 2 0 012 2v5"/><path d="M3 17h18"/><path d="M6 10V8a2 2 0 012-2h8a2 2 0 012 2v2"/><path d="M4 17v2M20 17v2"/></svg></div>
+        <h3>Kamar Tidur</h3><p>Sprei, bantal & rak</p>
+      </div>
+      <div class="cat">
+        <div class="cat-ico"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21V9l3-6 3 6v12"/><path d="M9 21h6"/><path d="M9 13h6"/></svg></div>
+        <h3>Dekorasi</h3><p>Vas, lampu & hiasan</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- FEATURES -->
-<section class="feat" id="kenapa">
+<!-- PRODUCTS -->
+<section class="block" id="produk" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-eyebrow">Koleksi Pilihan</div>
+      <h2 class="sec-title">Paling <em>disukai</em> pelanggan</h2>
+    </div>
+    <div class="prods" id="prodGrid"></div>
+  </div>
+</section>
+
+<!-- WHY -->
+<section class="block why" id="kenapa">
   <div class="wrap">
     <div class="sec-head">
       <div class="sec-eyebrow">Kenapa VGOWIN</div>
-      <h2>Cepat, aman, dan benar-benar murah</h2>
-      <p>Ribuan gamer percaya VGOWIN untuk top up harian mereka. Ini alasannya.</p>
+      <h2 class="sec-title">Belanja perabot jadi <em>tenang</em></h2>
     </div>
-    <div class="feat-grid">
-      <div class="fc">
-        <div class="fi">⚡</div>
-        <h4>Proses Otomatis</h4>
-        <p>Pesanan diproses sistem 24/7. Rata-rata diamond masuk kurang dari 10 detik setelah bayar.</p>
+    <div class="why-grid">
+      <div class="why-item">
+        <div class="why-ico"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 3v6c0 5-3.5 8.5-8 11-4.5-2.5-8-6-8-11V5l8-3z"/></svg></div>
+        <h4>Kualitas Pilihan</h4><p>Material awet, dikurasi langsung.</p>
       </div>
-      <div class="fc">
-        <div class="fi">🏷️</div>
-        <h4>Harga Termurah</h4>
-        <p>Langsung dari distributor resmi. Tanpa markup berlebih, plus promo & cashback tiap minggu.</p>
+      <div class="why-item">
+        <div class="why-ico"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h11v8H3z"/><path d="M14 10h4l3 3v2h-7z"/><circle cx="7.5" cy="17" r="1.8"/><circle cx="17.5" cy="17" r="1.8"/></svg></div>
+        <h4>Gratis Ongkir</h4><p>Untuk pembelian wilayah tertentu.</p>
       </div>
-      <div class="fc">
-        <div class="fi">🔒</div>
-        <h4>Aman & Resmi</h4>
-        <p>Pembayaran terenkripsi dan kami tidak pernah minta password akun game-mu. Cukup User ID.</p>
+      <div class="why-item">
+        <div class="why-ico"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg></div>
+        <h4>Garansi 1 Tahun</h4><p>Tukar jika ada cacat produksi.</p>
       </div>
-      <div class="fc">
-        <div class="fi">💬</div>
-        <h4>CS Siap 24 Jam</h4>
-        <p>Ada kendala? Tim support kami siaga setiap saat lewat chat untuk bantu menyelesaikannya.</p>
+      <div class="why-item">
+        <div class="why-ico"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="12" rx="2"/><path d="M3 10h18"/></svg></div>
+        <h4>Harga Jujur</h4><p>Tanpa markup, bisa COD.</p>
       </div>
     </div>
   </div>
 </section>
 
 <!-- CTA -->
-<section class="cta" id="cta">
+<section class="block" style="padding-bottom:0">
   <div class="wrap">
-    <div class="cta-box">
-      <h2>Siap menang hari ini?</h2>
-      <p>Gabung bareng jutaan gamer yang top up cepat dan hemat di VGOWIN. Sekali coba, langsung jadi langganan.</p>
-      <a href="#topup" class="btn btn-primary" style="padding:15px 30px;font-size:16px">Mulai Top Up Sekarang ⚡</a>
+    <div class="ctaband">
+      <h2>Siap menata rumah impianmu?</h2>
+      <p>Chat kami sekarang untuk konsultasi gratis dan penawaran khusus minggu ini.</p>
+      <a href="#kontak" class="btn btn-primary">Hubungi via WhatsApp</a>
     </div>
   </div>
 </section>
 
 <!-- FOOTER -->
-<footer>
+<footer id="kontak">
   <div class="wrap">
-    <div class="foot-top">
-      <div class="foot-brand">
-        <div class="logo"><span class="bolt mono">⚡</span><span><span class="g">VGO</span>WIN</span></div>
-        <p>Penyedia layanan top up game online tercepat dan termurah. Diamond, UC, voucher — masuk dalam detik.</p>
+    <div class="foot-grid">
+      <div class="foot-about">
+        <div class="logo"><span class="mark"></span>VGOWIN</div>
+        <p>Perabotan rumah tangga berkualitas untuk rumah yang nyaman ditinggali.</p>
       </div>
-      <div class="foot-cols">
-        <div class="foot-col">
-          <h5>Layanan</h5>
-          <a href="#games">Top Up Game</a>
-          <a href="#">Voucher</a>
-          <a href="#">Cek Transaksi</a>
-          <a href="#">Promo</a>
-        </div>
-        <div class="foot-col">
-          <h5>Bantuan</h5>
-          <a href="#cara">Cara Top Up</a>
-          <a href="#">FAQ</a>
-          <a href="#">Hubungi CS</a>
-          <a href="#">Lacak Pesanan</a>
-        </div>
-        <div class="foot-col">
-          <h5>Perusahaan</h5>
-          <a href="#kenapa">Tentang Kami</a>
-          <a href="#">Syarat & Ketentuan</a>
-          <a href="#">Kebijakan Privasi</a>
-        </div>
+      <div class="foot-col">
+        <h5>Belanja</h5>
+        <a href="#kategori">Ruang Tamu</a>
+        <a href="#kategori">Dapur & Makan</a>
+        <a href="#kategori">Kamar Tidur</a>
+        <a href="#kategori">Dekorasi</a>
+      </div>
+      <div class="foot-col">
+        <h5>Bantuan</h5>
+        <a href="#">Cara Pemesanan</a>
+        <a href="#">Pengiriman</a>
+        <a href="#">Garansi & Retur</a>
+        <a href="#">FAQ</a>
+      </div>
+      <div class="foot-col">
+        <h5>Kontak</h5>
+        <a href="#">WhatsApp 0812-3456-7890</a>
+        <a href="#">Instagram @vgowin</a>
+        <a href="#">Jl. Mawar No. 21, Jakarta</a>
       </div>
     </div>
-    <div class="foot-bot">
-      <span>© 2026 VGOWIN. Seluruh hak cipta dilindungi.</span>
-      <div class="pays">
-        <span class="pay">QRIS</span><span class="pay">DANA</span><span class="pay">GOPAY</span>
-        <span class="pay">OVO</span><span class="pay">BANK</span><span class="pay">PULSA</span>
-      </div>
+    <div class="foot-bottom">
+      <span>© 2026 VGOWIN. Semua hak dilindungi.</span>
+      <span>Dibuat untuk rumah yang nyaman</span>
     </div>
   </div>
 </footer>
 
 <script>
-  // ---- Data ----
-  const games = [
-    { id:'ml',  ic:'🛡️', nm:'Mobile Legends', cur:'Diamonds',
-      denoms:[['86 Diamonds',20000],['172 Diamonds',39000],['257 Diamonds',58000],['706 Diamonds',155000]] },
-    { id:'ff',  ic:'🔥', nm:'Free Fire', cur:'Diamonds',
-      denoms:[['100 Diamonds',14000],['310 Diamonds',43000],['520 Diamonds',71000],['1060 Diamonds',142000]] },
-    { id:'pubg',ic:'🎯', nm:'PUBG Mobile', cur:'UC',
-      denoms:[['60 UC',15000],['325 UC',75000],['660 UC',150000],['1800 UC',390000]] },
-    { id:'gi',  ic:'⚜️', nm:'Genshin Impact', cur:'Crystals',
-      denoms:[['60 Crystals',16000],['330 Crystals',79000],['1090 Crystals',245000],['2240 Crystals',490000]] },
-    { id:'val', ic:'🎮', nm:'Valorant', cur:'Points',
-      denoms:[['125 VP',15000],['420 VP',49000],['700 VP',79000],['1375 VP',150000]] },
-    { id:'hsr', ic:'🚂', nm:'Honkai: Star Rail', cur:'Shards',
-      denoms:[['60 Shards',16000],['330 Shards',79000],['1090 Shards',245000],['2240 Shards',490000]] },
+  const products = [
+    {name:"Kursi Santai Aksel", tag:"Ruang Tamu", price:"Rp1.250.000",
+      svg:`<path d="M30 70 v-26 q0-10 10-10 h44 q10 0 10 10 v26" stroke-linejoin="round"/><path d="M26 70 h72 v8 h-72 z"/><path d="M34 78 v14 M90 78 v14" stroke-linecap="round"/><path d="M30 44 h64" />`},
+    {name:"Meja Kopi Jati", tag:"Ruang Tamu", price:"Rp890.000",
+      svg:`<rect x="22" y="46" width="80" height="12" rx="3"/><path d="M30 58 v30 M94 58 v30" stroke-linecap="round"/><path d="M30 74 h64"/>`},
+    {name:"Lampu Lantai Rotan", tag:"Dekorasi", price:"Rp675.000",
+      svg:`<path d="M46 34 h32 l-6 30 h-20 z"/><path d="M50 44 h24 M48 54 h28"/><line x1="62" y1="64" x2="62" y2="92" stroke-linecap="round"/><line x1="50" y1="92" x2="74" y2="92" stroke-linecap="round"/>`},
+    {name:"Rak Buku Minimalis", tag:"Kamar Tidur", price:"Rp1.450.000",
+      svg:`<rect x="34" y="24" width="56" height="72" rx="3"/><path d="M34 48 h56 M34 72 h56"/><path d="M42 30 v12 M48 30 v12 M56 34 h10"/>`},
+    {name:"Set Peralatan Makan", tag:"Dapur & Makan", price:"Rp320.000",
+      svg:`<circle cx="48" cy="60" r="20"/><circle cx="48" cy="60" r="11"/><path d="M82 40 v40 M82 40 q-6 4 -6 12 q0 6 6 6" stroke-linecap="round"/>`},
+    {name:"Keranjang Penyimpanan", tag:"Dekorasi", price:"Rp145.000",
+      svg:`<path d="M34 50 h56 l-6 42 h-44 z" stroke-linejoin="round"/><path d="M44 50 v42 M62 50 v42 M80 50 v42"/><path d="M40 64 h48 M38 78 h52"/>`},
   ];
-
-  const rupiah = n => 'Rp ' + n.toLocaleString('id-ID');
-  let curGame = 0, curDenom = 0;
-
-  // ---- Simulator: game chips ----
-  const gamePick = document.getElementById('gamePick');
-  games.slice(0,6).forEach((g,i)=>{
-    const el = document.createElement('div');
-    el.className = 'game-chip' + (i===0?' on':'');
-    el.innerHTML = `<span class="ic">${g.ic}</span><span class="nm">${g.nm}</span>`;
-    el.onclick = ()=>{ curGame=i; curDenom=0; renderChips(); renderDenoms(); };
-    gamePick.appendChild(el);
-  });
-  function renderChips(){
-    [...gamePick.children].forEach((el,i)=>el.classList.toggle('on',i===curGame));
-  }
-
-  // ---- Simulator: denominations ----
-  const denomsBox = document.getElementById('denoms');
-  function renderDenoms(){
-    denomsBox.innerHTML='';
-    games[curGame].denoms.forEach((d,i)=>{
-      const el=document.createElement('div');
-      el.className='denom'+(i===curDenom?' on':'');
-      el.innerHTML=`<span class="amt">${d[0]}</span><span class="pr mono">${rupiah(d[1])}</span>`;
-      el.onclick=()=>{ curDenom=i; renderDenoms(); };
-      denomsBox.appendChild(el);
-    });
-    updateTotal();
-  }
-  function updateTotal(){
-    document.getElementById('total').textContent = rupiah(games[curGame].denoms[curDenom][1]);
-  }
-  function checkout(){
-    const g=games[curGame], d=g.denoms[curDenom];
-    alert(`Pesanan kamu:\n\n${g.nm}\n${d[0]}\nTotal: ${rupiah(d[1])}\n\n(Ini demo — sambungkan ke sistem pembayaran kamu di sini.)`);
-  }
-
-  // ---- Game catalog cards ----
-  const gameCards=document.getElementById('gameCards');
-  games.forEach((g,i)=>{
-    const min=Math.min(...g.denoms.map(d=>d[1]));
-    const el=document.createElement('div');
-    el.className='gc';
-    el.innerHTML=`<div class="emoji">${g.ic}</div>
-      <h4>${g.nm}</h4>
-      <div class="cur">${g.cur}</div>
-      <div class="from">Mulai dari <b>${rupiah(min)}</b></div>`;
-    el.style.cursor='pointer';
-    el.onclick=()=>{ curGame=i; curDenom=0; renderChips(); renderDenoms();
-      document.getElementById('topup').scrollIntoView({behavior:'smooth'}); };
-    gameCards.appendChild(el);
-  });
-
-  renderDenoms();
+  document.getElementById('prodGrid').innerHTML = products.map(p=>`
+    <div class="prod">
+      <div class="prod-img"><svg viewBox="0 0 124 124" stroke-linecap="round" stroke-linejoin="round">${p.svg}</svg></div>
+      <div class="prod-info">
+        <div class="tag">${p.tag}</div>
+        <h3>${p.name}</h3>
+        <div class="prod-foot">
+          <span class="price">${p.price}</span>
+          <span class="add">+ Keranjang</span>
+        </div>
+      </div>
+    </div>`).join('');
 </script>
 </body>
 </html>
