@@ -38,6 +38,9 @@
   .logo{font-family:"Fraunces",serif;font-weight:600;font-size:24px;letter-spacing:.5px;display:flex;align-items:center;gap:10px}
   .logo .mark{width:24px;height:24px;border-radius:7px;background:var(--accent);display:inline-block;position:relative}
   .logo .mark::after{content:"";position:absolute;inset:6px;border-radius:3px;background:var(--bg)}
+  /* Logo gambar: ganti file 'logo.png' dengan logo Anda. Tinggi otomatis menyesuaikan. */
+  .logo-img{height:40px;width:auto;display:block}
+  footer .logo-img{height:36px}
   .navlinks{display:flex;gap:32px;font-size:15px;font-weight:500;color:var(--muted)}
   .navlinks a{transition:color .2s}
   .navlinks a:hover{color:var(--ink)}
@@ -135,7 +138,7 @@
 
 <header>
   <div class="wrap nav">
-    <div class="logo"><span class="mark"></span>VGOWIN</div>
+    <a href="#" class="logo"><img src="logo.png" alt="VGOWIN" class="logo-img"></a>
     <nav class="navlinks">
       <a href="#kategori">Kategori</a>
       <a href="#produk">Produk</a>
@@ -287,7 +290,7 @@
   <div class="wrap">
     <div class="foot-grid">
       <div class="foot-about">
-        <div class="logo"><span class="mark"></span>VGOWIN</div>
+        <div class="logo"><img src="logo.png" alt="VGOWIN" class="logo-img"></div>
         <p>Perabotan rumah tangga berkualitas untuk rumah yang nyaman ditinggali.</p>
       </div>
       <div class="foot-col">
